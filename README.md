@@ -96,7 +96,7 @@ set_countries.update(set_countries_two, set_countries_three)
 print(set_countries)
 ```
 
-# Operacines Set
+# Operaciones Set
 
 - union(set): Realiza la operacion “union” entre dos conjuntos. La unión entre dos conjuntos es sumar los elementos de estos sin repetir elementos. Esta operación tambien se puede realizar con el signo “|”: set_a | set_b.
 
@@ -145,4 +145,20 @@ Ejemplo 2:
 #Output:
 
 {'COL', 'CA', 'BOL', 'MX'}
+```
+
+## Solución
+
+```python
+countries = {"MX", "COL", "ARG", "USA"}
+northAm = {"USA", "CANADA"}
+centralAm = {"MX", "GT", "BZ"}
+southAm = {"COL", "BZ", "ARG"}
+
+new_set = set()
+# Escribe tu solución 👇
+countries = {"MX", "COL", "ARG", "USA"}
+new_set = countries | northAm | centralAm | southAm
+#new_set.update(countries,northAm,centralAm,southAm)
+print(new_set)
 ```
