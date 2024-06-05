@@ -34,7 +34,11 @@ set_languages = {'javascript','python', 'rush', 'php', 'ruby', 'go', 'java', 'c#
 # Elementos que deseas eliminar
 elementos_a_eliminar = {'python', 'rush', 'php', 'ruby', 'go', 'java', 'c#'}
 
-# Eliminar los elementos
+# Eliminar los elementos 
 set_languages -= elementos_a_eliminar
+
+#alternantiva 
+# for elemento in elementos_a_eliminar:
+#     set_languages.discard(elemento)
 
 print(set_languages) 
