@@ -83,5 +83,5 @@ for i in range(filas):
       print(matriz[i][j])
 print(transpuesta)
 
-trans = [[fila[0] for fila in matriz]]
+trans = [[fila[i] for fila in matriz] for i in range(3)]
 print(trans)
