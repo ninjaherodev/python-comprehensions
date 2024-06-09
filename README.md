@@ -162,3 +162,11 @@ new_set = countries | northAm | centralAm | southAm
 #new_set.update(countries,northAm,centralAm,southAm)
 print(new_set)
 ```
+
+# List vs Tuple vs Set
+
+| Iterable | Mutable | Ordenada | indexing/slicing | Duplicar |
+| -------- | ------- | -------- | ---------------- | -------- |
+| List     | SI      | SI       | SI               | SI       |
+| Tuple    | NO      | SI       | SI               | SI       |
+| Set      | SI      | NO       | NO               | NO       |
