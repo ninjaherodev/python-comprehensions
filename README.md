@@ -170,3 +170,91 @@ print(new_set)
 | List     | SI      | SI       | SI               | SI       |
 | Tuple    | NO      | SI       | SI               | SI       |
 | Set      | SI      | NO       | NO               | NO       |
+
+```python
+'''
+🤖 Juego de Piedra, Papel y Tijera 😈
+'''
+import random
+
+opciones = ('piedra', 'papel', 'tijera')
+opciones_text = ', '.join(opciones).title()
+
+def userOption():
+  eleccion = input(f'Elige: [{opciones_text}]:').lower()
+  while eleccion not in opciones:
+      print("Entrada no válida. Inténtalo de nuevo.")
+      eleccion = input(f'Elige: [{opciones_text}]:').lower()
+  return eleccion
+
+def cpuOption():
+   return random.choice(opciones)
+
+def findWinner(userOption, cpuOption):
+   if userOption == cpuOption:
+      return 'empate'
+   elif ((userOption == 'piedra' and cpuOption == 'tijera') or
+         (userOption == 'papel' and cpuOption == 'piedra') or
+         (userOption == 'tijeta' and cpuOption == 'papel')):
+      return 'usario'
+   else:
+      return 'computador'
+
+def game():
+  print("¡Bienvenido al juego de Piedra, Papel o Tijera!\n")
+  rondas = 3
+  rondas_jugadas = 0
+  user_win = 0
+  cpu_win = 0
+
+  while True:
+    print(f"Ronda [{rondas_jugadas + 1}] de [{rondas}]")
+    print(f"*****************\n")
+    usuario =  userOption()
+    computador = cpuOption()
+
+    print(f"Usuario: {usuario} VS Cpu:{computador} ")
+    resultado = findWinner(usuario, computador)
+     
+    if resultado == 'usario':
+      user_win += 1
+      print('Ganaste!')
+    elif resultado == 'computador':
+      cpu_win += 1
+      print('Perdiste')
+    else:
+      print(resultado)
+
+    rondas_jugadas += 1
+    print(f"Marcador => cpu: {cpu_win} user: {user_win}\n" )
+
+    if rondas_jugadas>= rondas:
+        print("¡Gracias por jugar!")
+        print(f"Rondas jugadas: {rondas_jugadas}")
+        print(f"Victorias del usuario: {user_win}")
+        print(f"Victorias de la computadora: {cpu_win}")
+        if user_win > cpu_win:
+           print("¡El usuario es el ganador final!")
+        elif user_win < cpu_win:
+           print("¡La computadora es la ganadora final!")
+        else:
+           print("¡Es un empate final!")
+        break
+
+
+game()
+```
+```python
+def message_creator(text):
+   # Escribe tu solución 👇
+   opciones_message = {
+    "computadora": "Con mi computadora puedo programar usando Python",
+    "celular": "En mi celular puedo aprender usando la app de Platzi",
+    "cable": "¡Hay un cable en mi bota!"
+}
+   return opciones_message.get(text, "Artículo no encontrado")
+
+text = 'computadora'
+response = message_creator(text)
+print(response)
+```
