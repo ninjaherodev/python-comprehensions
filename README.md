@@ -215,7 +215,7 @@ def game():
 
     print(f"Usuario: {usuario} VS Cpu:{computador} ")
     resultado = findWinner(usuario, computador)
-     
+
     if resultado == 'usario':
       user_win += 1
       print('Ganaste!')
@@ -244,6 +244,7 @@ def game():
 
 game()
 ```
+
 ```python
 def message_creator(text):
    # Escribe tu solución 👇
@@ -257,4 +258,43 @@ def message_creator(text):
 text = 'computadora'
 response = message_creator(text)
 print(response)
+```
+
+```python
+def get_totals(orders):
+   return [order['total'] for order in orders]
+
+def calc_total(totals):
+   return sum(totals)
+```
+
+```python
+import my_functions
+def get_total(orders):
+  # Tu código aquí 👇
+  totals = my_functions.get_totals(orders)
+  sum = my_functions.calc_total(totals)
+  print(totals)
+  return sum
+
+orders = [
+  {
+    "customer_name": "Nicolas",
+    "total": 100,
+    "delivered": True,
+  },
+  {
+    "customer_name": "Zulema",
+    "total": 120,
+    "delivered": False,
+  },
+  {
+    "customer_name": "Santiago",
+    "total": 20,
+    "delivered": False,
+  }
+]
+
+total = get_total(orders)
+print(total)
 ```
