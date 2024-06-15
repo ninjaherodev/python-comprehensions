@@ -8,13 +8,7 @@ def read_csv(path):
             total_gastos += int(row[1])
             print(row)
         return total_gastos
-        # data = []
-        # for row in reader:
-        #     iterable =zip(header, row)
-        #     country_dict = {key:value for key,value in iterable}
-        #     data.append(country_dict)
-        # return data
-           
+ 
 if __name__ == '__main__':
    read_csv('./users/salary.csv')
   
